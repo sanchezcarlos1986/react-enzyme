@@ -29,8 +29,7 @@ describe('App', () => {
 
 		const [a, ...rest] = reducer.mock.calls
 		expect(rest).toEqual([
-      [{ finanzas: [initialState] }, { type: 'AGREGAR', payload: { cant: Number(newCant), desc: newDesc } }],
-      [{ finanzas: [initialState] }, { type: 'ELIMINAR', index: 0 }]
+      [{ finanzas: [initialState] }, { type: 'AGREGAR', payload: { cant: Number(newCant), desc: newDesc } }]
 		])
 		expect(wrapper.text().includes('lala')).toBeTruthy()
 	})
