@@ -1,16 +1,22 @@
-orbs:
-  react: thefrontside/react@dev:alpha
 version: 2.1
+
+orbs:
+  react: 'thefrontside/react@dev:alpha'
+
 workflows:
-  push:
-    jobs:
-      - react/install
-      - react/eslint:
-          requires:
-            - react/install
-      - react/test:
-          requires:
-            - react/install
-      - react/coverage:
-          requires:
-            - react/install
+  "Hello Workflow":
+    push:
+      jobs:
+        - react/install
+        - react/eslint:
+            name: react-eslint
+            requires:
+              - react/install
+        - react/test:
+            name: react-test
+            requires:
+              - react/install
+        - react/coverage:
+            name: react-coverage
+            requires:
+              - react/install
