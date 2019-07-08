@@ -1,6 +1,6 @@
 orbs:
   react: "thefrontside/react@dev:alpha"
-version: 0.1
+version: 2.1
 workflows:
   push:
     jobs:
